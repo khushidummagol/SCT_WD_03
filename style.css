@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #1f1c2c, #928dab);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  z-index: 1;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffe600;
+  text-shadow: 0 0 15px #ffe600;
+}
+
+.title span {
+  color: #ff3cac;
+  text-shadow: 0 0 15px #ff3cac;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #ffe600;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.3s;
+}
+.cell.X {
+  color: #00ffff; /* Neon blue for X */
+  text-shadow: 0 0 8px #00ffff, 0 0 12px #00ffff;
+}
+
+.cell.O {
+  color: #ff00ff; /* Neon pink for O */
+  text-shadow: 0 0 8px #ff00ff, 0 0 12px #ff00ff;
+}
+
+
+.cell:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.restart-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff3cac;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #ff3cac;
+}
+
+.restart-btn:hover {
+  background-color: #c91878;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: #1f1c2c;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px #ffe600;
+}
+
+.popup-content h2 {
+  color: #ffe600;
+  margin-bottom: 1rem;
+}
+
+.popup-content button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff3cac;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #c91878;
+}
+
+.hidden {
+  display: none;
+}
+
+.strike {
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  z-index: 2;
+}
